@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <script>
+      "use strict";
+      alert(document.constructor.name); // HTMLDocument
+      alert(HTMLDocument.prototype.__proto__.constructor.name); // Document
+      alert(HTMLDocument.prototype.__proto__.__proto__.constructor.name); // Node
+    </script>
+  </body>
+</html>

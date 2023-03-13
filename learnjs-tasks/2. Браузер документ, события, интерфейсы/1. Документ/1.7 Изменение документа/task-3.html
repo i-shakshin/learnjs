@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      aaa
+      <tr>
+        <td>Тест</td>
+      </tr>
+    </table>
+
+    <script>
+      "use strict";
+      alert(table); // таблица, как и должно быть
+
+      table.remove();
+      // почему в документе остался текст "ааа"?
+      /*
+        На этот вопрос можно ответить используя инструменты браузера.
+         Мы увидим "aaa" до элемента <table>.
+        Теперь очевидно, что когда мы удаляем таблицу, текст остаётся.
+      */
+    </script>
+  </body>
+</html>

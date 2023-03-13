@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://learn.javascript.ru/task/find-elements/table.html -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+      // 1. Таблица с `id="age-table"`.
+      let table = document.getElementById("age-table");
+
+      // 2. Все label в этой таблице
+      table.getElementsByTagName("label");
+      // или
+      document.querySelectorAll("#age-table label");
+
+      // 3. Первый td в этой таблице
+      table.rows[0].cells[0];
+      // или
+      table.getElementsByTagName("td")[0];
+      // или
+      table.querySelector("td");
+
+      // 4. Форма с name="search"
+      // предполагаем, что есть только один элемент с таким name в документе
+      let form = document.getElementsByName("search")[0];
+      // или, именно форма:
+      document.querySelector('form[name="search"]');
+
+      // 5. Первый input в этой форме
+      form.getElementsByTagName("input")[0];
+      // или
+      form.querySelector("input");
+
+      // 6. Последний input в этой форме
+      let inputs = form.querySelectorAll("input"); // найти все input
+      inputs[inputs.length - 1]; // взять последний
+    </script>
+  </head>
+  <body>
+    <form name="search">
+      <label
+        >Search the site:
+        <input type="text" name="search" />
+      </label>
+      <input type="submit" value="Search!" />
+    </form>
+
+    <hr />
+
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody>
+          <tr>
+            <td>Age:</td>
+            <td id="age-list">
+              <label>
+                <input type="radio" name="age" value="young" />less than
+                18</label
+              >
+              <label>
+                <input type="radio" name="age" value="mature" />18-50</label
+              >
+              <label>
+                <input type="radio" name="age" value="senior" />more than
+                50</label
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td>Additionally:</td>
+            <td>
+              <input type="text" name="info[0]" />
+              <input type="text" name="info[1]" />
+              <input type="text" name="info[2]" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="submit" value="Search!" />
+    </form>
+
+    <style>
+      .tb_button {
+        padding: 1px;
+        cursor: pointer;
+        border-right: 1px solid #8b8b8b;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+      }
+      .tb_button.hover {
+        borer: 2px outset #def;
+        background-color: #f8f8f8 !important;
+      }
+      .ws_toolbar {
+        z-index: 100000;
+      }
+      .ws_toolbar .ws_tb_btn {
+        cursor: pointer;
+        border: 1px solid #555;
+        padding: 3px;
+      }
+      .tb_highlight {
+        background-color: yellow;
+      }
+      .tb_hide {
+        visibility: hidden;
+      }
+      .ws_toolbar img {
+        padding: 2px;
+        margin: 0px;
+      }
+    </style>
+  </body>
+</html>
