@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Rabbit extends Object {
+        constructor(name) {
+          super();
+          this.name = name;
+        }
+      }
+
+      let rabbit = new Rabbit("Кроль");
+
+      alert(rabbit.hasOwnProperty("name")); // true
+
+      /*
+      Чтоб будет если явно написать "class Rabbit extends Object",
+      результат будет отличаться от обычного "class Rabbit"?
+
+      В чем разница?
+      Ответ: 
+      При "class Rabbit extends Object" необходимо вызвать super() в конструкторе,
+      а также Rabbit.__proto__ === Object, что означает доступ к статическим методам
+      объекта Object
+      */
+    </script>
+  </body>
+</html>
